@@ -72,11 +72,10 @@ public class ListNewsActivity extends AppCompatActivity {
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, url, null, response -> {
             if(response != null) {
                 try {
-                    Toast.makeText(this, "success - " + response.getString("totalResults"), Toast.LENGTH_SHORT).show();
 
                     JSONArray jsonArray = response.getJSONArray("articles");
                     int size = jsonArray.length();
-                    size = Math.min(20,size);
+                    size = Math.min(200,size);
                     for(int i=0 ; i<size ; i++) {
                         JSONObject obj = jsonArray.getJSONObject(i);
                         JSONObject source = obj.getJSONObject("source");

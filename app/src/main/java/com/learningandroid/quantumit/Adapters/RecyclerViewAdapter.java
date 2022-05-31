@@ -48,15 +48,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                 .load(imageurl)
                 .into(holder.imageView);
 
-        SimpleDateFormat dateFormat2 = new SimpleDateFormat("yyyy-mm-ddThh:mm:ssZ");
-        try {
-            Date date = dateFormat2.parse("2022-05-31T10:13:51Z");
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-
-
-//        Time time = new Time("2022-05-31T10:13:51Z");
 
     }
 

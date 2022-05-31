@@ -78,18 +78,17 @@ public class MainActivity extends AppCompatActivity {
         binding.bottomLoginCardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, ListNewsActivity.class));
-//                if(login) {
-//                    String email = loginFragment.getEmail();
-//                    String password = loginFragment.getPassword();
-//                    loginemailPasswordUser(email,password);
-//                }
-//                else {
-//                    String email = signUpFragment.getEmail();
-//                    String password = signUpFragment.getPassword();
-//                    String username = signUpFragment.getUserName();
-//                    createUserEmailAccount(email,password,username);
-//                }
+                if(login) {
+                    String email = loginFragment.getEmail();
+                    String password = loginFragment.getPassword();
+                    loginemailPasswordUser(email,password);
+                }
+                else {
+                    String email = signUpFragment.getEmail();
+                    String password = signUpFragment.getPassword();
+                    String username = signUpFragment.getUserName();
+                    createUserEmailAccount(email,password,username);
+                }
             }
         });
 
@@ -118,7 +117,7 @@ public class MainActivity extends AppCompatActivity {
 
                             if(task.isSuccessful()) {
                                 Toast.makeText(MainActivity.this, "Logged In", Toast.LENGTH_SHORT).show();
-//                                startActivity(new Intent(MainActivity.this, ListNewsActivity.class));
+                                startActivity(new Intent(MainActivity.this, ListNewsActivity.class));
                             }
                             else {
                                 Toast.makeText(MainActivity.this, "Wrong Credentials", Toast.LENGTH_SHORT).show();
