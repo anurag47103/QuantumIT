@@ -1,0 +1,5 @@
+major libraries used
+
+1-> Volley library (used to make the API calls i.e get data from the url)
+2-> firebase (used for authentication)
+3-> Picaso (used for getting the image from the url)
