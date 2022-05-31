@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/news_item_view"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:elevation="30dp"
+        app:cardCornerRadius="10dp"
+        app:cardBackgroundColor="@color/white">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp">
+
+            <TextView
+                android:id="@+id/timeagoTextview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2 hours ago" />
+
+            <TextView
+                android:id="@+id/sourceTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_toRightOf="@+id/timeagoTextview"
+                android:text="BBC News"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/newsTitleTextView"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/timeagoTextview"
+                android:layout_marginTop="10dp"
+                android:text="Apple admits slowing down older iPhones"
+                android:textColor="@color/app_blue"
+                android:textStyle="bold"
+                />
+            <TextView
+                android:id="@+id/newsContentTextView"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/app_blue"
+                android:text="Customers have long suspected iPhones slow down over time. Now, Apple has confirmed some models do"
+                android:layout_below="@+id/newsTitleTextView"
+                android:textSize="10sp"
+                />
+
+            <ImageView
+                android:id="@+id/news_imageView"
+                android:layout_width="97dp"
+                android:layout_height="82dp"
+                android:layout_marginTop="5dp"
+                android:layout_toRightOf="@id/newsTitleTextView"
+                android:src="@drawable/ic_baseline_phone_24" />
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>

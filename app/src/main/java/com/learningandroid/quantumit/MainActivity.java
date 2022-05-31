@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -42,6 +43,13 @@ public class MainActivity extends AppCompatActivity {
                 binding.signupCardView.setCardBackgroundColor(getColor(R.color.app_red));
                 binding.signupTextView.setTextColor(getColor(R.color.white));
                 binding.bottomloginTextView.setText("REGISTER");
+            }
+        });
+
+        binding.bottomloginTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, ListNewsActivity.class));
             }
         });
     }

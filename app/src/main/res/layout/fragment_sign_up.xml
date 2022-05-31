@@ -93,6 +93,68 @@
 
 
 
+            <EditText
+                android:id="@+id/editTextNumber"
+                android:layout_width="330dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="37dp"
+                android:layout_marginTop="2dp"
+                android:textSize="18sp"
+                android:hint="9876543210"
+                android:fontFamily="@font/roboto"
+                android:drawableEnd="@drawable/ic_baseline_phone_24"
+                android:ems="10"
+                android:inputType="number" />
+
+            <TextView
+                android:id="@+id/passwordTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textColor="@color/app_black"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="14dp"
+                android:fontFamily="@font/roboto"
+                android:textSize="17sp"
+                android:text="Password" />
+
+            <EditText
+                android:id="@+id/editTextTextPassword"
+                android:layout_width="330dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="37dp"
+                android:layout_marginTop="2dp"
+                android:hint="Password"
+                android:fontFamily="@font/roboto"
+                android:textSize="18sp"
+                android:ems="10"
+                android:inputType="textPassword"
+                android:drawableEnd="@drawable/ic_baseline_lock_24"/>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="37dp"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/checkBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="     I agree with " />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/app_red"
+                    android:textSize="15sp"
+                    android:text="@string/term_condition"
+
+                    android:textStyle="bold"
+                    />
+
+            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -117,6 +179,7 @@
                     android:textStyle="bold"
                     />
             </LinearLayout>
+
 
 
         </LinearLayout>
