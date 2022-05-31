@@ -7,12 +7,16 @@
         <entry key="app/src/main/res/drawable/ic_baseline_lock_24.xml" value="0.554" />
         <entry key="app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.554" />
         <entry key="app/src/main/res/drawable/ic_baseline_phone_24.xml" value="0.554" />
+        <entry key="app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.3165" />
+        <entry key="app/src/main/res/drawable/input_box_layout.xml" value="0.404" />
+        <entry key="app/src/main/res/drawable/shadow_background.xml" value="0.2535" />
         <entry key="app/src/main/res/font/.xml" value="0.4432291666666667" />
         <entry key="app/src/main/res/layout/activity_list_news.xml" value="0.5" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.33" />
-        <entry key="app/src/main/res/layout/fragment_login.xml" value="0.5" />
-        <entry key="app/src/main/res/layout/fragment_sign_up.xml" value="0.5" />
+        <entry key="app/src/main/res/layout/fragment_login.xml" value="0.26558891454965355" />
+        <entry key="app/src/main/res/layout/fragment_sign_up.xml" value="0.26558891454965355" />
         <entry key="app/src/main/res/layout/news_item.xml" value="0.5609375" />
+        <entry key="app/src/main/res/layout/shadow_background.xml" value="0.24791666666666667" />
       </map>
     </option>
   </component>

@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     android:background="@color/app_grey"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/loginFragment"
     tools:context=".LoginFragment">
 
     <com.google.android.material.card.MaterialCardView

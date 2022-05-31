@@ -5,8 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
+import android.widget.EditText;
 import android.widget.SearchView;
 import android.widget.Toast;
 
@@ -26,6 +30,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 
 public class ListNewsActivity extends AppCompatActivity {
@@ -34,8 +39,11 @@ public class ListNewsActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private RequestQueue queue;
     private List<News> newsList;
+    private List<News> newsList2;
     public static final String TAG = "check";
-
+    private EditText searchBar;
+    private RecyclerViewAdapter adapter;
+    Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,12 +54,14 @@ public class ListNewsActivity extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         newsList = new ArrayList<>();
+        newsList2 = new ArrayList<>();
 
         queue = MySingleton.getInstance(this.getApplicationContext()).getRequestQueue();
         queue.getCache().clear();
 
+        context = this;
+
         String url = "https://newsapi.org/v2/everything?q=keyword&apiKey=edeb71fcaf554a6285a140fa74ce34f3";
-        String testUrl = "https://api.publicapis.org/entries";
 
         JSONObject jsonObject = new JSONObject();
         try {
@@ -82,8 +92,33 @@ public class ListNewsActivity extends AppCompatActivity {
                         newsList.add(addNews);
                     }
 
-                    recyclerView.setAdapter(new RecyclerViewAdapter(newsList, this));
+                    adapter = new RecyclerViewAdapter(newsList, this);
+                    recyclerView.setAdapter(adapter);
+                    searchBar = findViewById(R.id.searchbar);
+                    searchBar.addTextChangedListener(new TextWatcher() {
+                        @Override
+                        public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
+                        }
+
+                        @Override
+                        public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+                        }
+
+                        @Override
+                        public void afterTextChanged(Editable editable) {
+                            newsList2.clear();
+                            String typeText = editable.toString().toLowerCase().trim();
+                            for(News item : newsList) {
+                                if(item.getTitle().toLowerCase().contains(typeText)) {
+                                    newsList2.add(item);
+                                }
+                            }
+                            adapter = new RecyclerViewAdapter(newsList2, context);
+                            recyclerView.setAdapter(adapter);
+                        }
+                    });
                 }
                 catch (JSONException e) {
                     Log.d(TAG, "request error - " + e);

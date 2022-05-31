@@ -14,7 +14,11 @@ import com.learningandroid.quantumit.R;
 import com.learningandroid.quantumit.model.News;
 import com.squareup.picasso.Picasso;
 
+import java.sql.Time;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
@@ -43,6 +47,16 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         Picasso.get()
                 .load(imageurl)
                 .into(holder.imageView);
+
+        SimpleDateFormat dateFormat2 = new SimpleDateFormat("yyyy-mm-ddThh:mm:ssZ");
+        try {
+            Date date = dateFormat2.parse("2022-05-31T10:13:51Z");
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+
+//        Time time = new Time("2022-05-31T10:13:51Z");
 
     }
 
