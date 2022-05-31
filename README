@@ -3,3 +3,8 @@ major libraries used
 1-> Volley library (used to make the API calls i.e get data from the url)
 2-> firebase (used for authentication)
 3-> Picaso (used for getting the image from the url)
+
+
+google drive link for the video of the app showcasing the functionality implemented -
+
+https://drive.google.com/file/d/1rRiNdTju7nlPqZp5T64tbAv7qgyIlnZ7/view?usp=sharing
